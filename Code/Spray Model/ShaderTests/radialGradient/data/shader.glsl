@@ -145,7 +145,7 @@ void main(void)
     float dispersion = 0.5;
 
     // The farther from the center of the window, the more transparent
-    float alpha = 1.0 - distance / dispersion - noise; 
+    float alpha = dispersion - noise; 
 
  	gl_FragColor = vec4(red, green, blue, alpha);
 
