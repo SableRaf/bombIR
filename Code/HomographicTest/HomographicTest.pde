@@ -13,20 +13,23 @@ void setup() {
   
   corners = new PVector[4];
   
+  
+  // Random corner positions for the target quad (from 0.0 to 1.0)
+  corners[0] = new PVector( random(width/4) / width, random(height/4) / height );
+  corners[1] = new PVector( (width - random(width/4)) / width, random(height/4) / height );
+  corners[2] = new PVector( (width - random(width/4)) / width, (height - random(height/4)) / height );
+  corners[3] = new PVector( random(width/4) / width, (height - random(height/4)) / height );
+  
+  // println("Corners = [" + corners[0] + "," + corners[1] + "," + corners[2] + "," + corners[3] + "]" );
+  
+
   /*
-  // Hardcoded values for testing (from 0.0 to 1.0)
-  corners[0] = new PVector( random(width/4) / width, random(height/4) /height );
-  corners[1] = new PVector( width - random(width/4)/ width, random(height/4) /height );
-  corners[2] = new PVector( width - random(width/4)/ width, height - random(height/4) /height );
-  corners[3] = new PVector( random(width/4)/ width, height - random(height/4) /height );
-  */
-
-
   // Hardcoded values for testing (from 0.0 to 1.0)
   corners[0] = new PVector( 0.21, 0.38 );
   corners[1] = new PVector( 0.86, 0.12 );
   corners[2] = new PVector( 0.91, 0.95 );
   corners[3] = new PVector( 0.07, 0.82 );
+  */
 
 
 }
@@ -44,6 +47,7 @@ void draw() {
   rect(0,0,width,height);
   popStyle();
   
+  // Draw a red circle at source position
   pushStyle();
   noStroke();
   fill(200,0,0);
@@ -70,11 +74,14 @@ void draw() {
   // Get the warped coordinates
   PVector wPos = warper.warp(float(mouseX)/width, float(mouseY)/height);
   
+  /*
   println("");
   println("mouseX = " + mouseX + " | mouseY = " + mouseY);
   println("wPos.x = " + wPos.x + " | wPos.y = " + wPos.y);
   println("");
+  */
   
+  // Draw a green circle at warped position
   pushStyle();
   noStroke();
   fill(0,200,0);
@@ -150,11 +157,13 @@ class WarpManager {
     float X = a*x + b*y +c*x*y + d;
     float Y = e*x + f*y + i*x*y + j;
     
+    /*
     println("float X = a*x + b*y +c*x*y + d;");
     println(X+" = " + a +"*"+x+" + "+ b+"*"+y+"+"+c+"*"+x+"*"+y+" + "+d+";");
     
     println("Y = e*x + f*y + i*x*y + j;");
     println(Y+" = " + e +"*"+x+" + "+ f+"*"+y+"+"+i+"*"+x+"*"+y+" + "+d+";");
+    */
 
     PVector targetCoord = new PVector(X,Y);
     
