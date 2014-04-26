@@ -19,9 +19,8 @@
  * http://www.graffitiresearchlab.de
  * ----------------------------------------------------------------------------
  * License:
- * Licensed according to the 
- * Attribution-Non-Commercial-Repurcussions 3.0 Unported (CC BY-NC 3.0)
- * as per http://www.graffitiresearchlab.fr/?portfolio=attribution-noncommercial-repercussions-3-0-unported-cc-by-nc-3-0
+ * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+ * https://creativecommons.org/licenses/by-nc-sa/3.0/
  * 
  * ----------------------------------------------------------------------------
  * Credits
@@ -62,7 +61,6 @@ PGraphics wallscreen, paintscreen, paintbackground;
 PImage bg;
 
 ScreenPreview capturePreview;
-
 
 // Spray renderers
 SprayManager sprayManagerLeft; // paint screen (left)
